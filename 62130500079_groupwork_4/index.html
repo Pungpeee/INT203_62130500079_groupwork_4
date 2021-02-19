@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Photo gallery</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container mt-5 flex justify-center" v-show="!cross">
+
+            <div class="card p-3 shadow-2xl">
+                <div>
+                    <h1 class="gallery text-xl font-semibold">˚꒰༘ * My photo gallery ({{countimage}}) ˚◡̎💝</h1>
+                </div>
+
+                <div class="searchbox mt-6">
+                    <img src="./images/search.png" class="cursor-pointer " style="width:30px" @click="search" v-show="!searchbox">
+                    <div v-show="searchbox" class="input mt-6 ">
+                        <input v-model="inputTask" placeholder="Please searching photos"
+                            class="p-2 bg-white rouded border-2 border-pink-300" />
+
+                        <button @click="search" class="bg-pink-300 text-white py-1 px-2 rounded ml-4">Cancel</button>
+
+                    </div>
+                </div>
+
+
+                <p v-if="noimage <= 0" class="mt-6"> No photo. </p>
+
+                <div v-for="(image,index) in searchimage">
+                    <div v-bind:key="image.id" class="flex">
+                        <img v-on:click="toggleDone(index) ; displayImage(image.picture)" v-bind:src="image.picture"
+                            class="zoom column mr-24 rounded my-8" style="width:35%;">
+
+                        <p class="flex items-center mr-1"> {{image.description}} </p>
+                    </div>
+
+                    <img v-show="image.done" src="./images/heart.png" style="width:30px">
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <div v-show="cross" class="bg-black w-full h-screen ">
+            <div class="image w-full flex items-center justify-center h-screen">
+                <img v-bind:src="currentImage" class="image w-1/4 flex justify-center">
+
+                <!-- <div class="flex items-start"> -->
+                <img src="./images/cross.png" class="w-14 cursor-pointer top-5 right-5 fixed hover:bg-gray-700 delay-00 duration-300" @click="closeImage">
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- my main.js -->
+
+    <script src="./main.js"></script>
+</body>
+ื
+
+</html>

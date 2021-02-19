@@ -1,0 +1,30 @@
+body {
+  background-color: #B5E3E3;
+  border-radius: 10px
+}
+
+.card {
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff
+}
+.image {
+  transition: 0.2s opacity;
+}
+.image {
+  transition: transform .2s;
+}
+.zoom:hover {
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari 3-8 */
+  transform: scale(1.2);
+  
+}
+.gallery {
+  text-shadow: 2px 2px #b8b8b8;
+  
+}
+
