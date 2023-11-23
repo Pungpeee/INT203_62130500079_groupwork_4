@@ -5,19 +5,31 @@ const app = {
                     id:'pic1',
                     picture: './images/pic1.jpg',
                     done: false,
-                    description: '🌷MEROS Coffee & Eatery'
+                    description: '🌷Freshman'
                 },
                 {
                     id:'pic2',
                     picture: './images/pic2.jpg',
                     done: false,
-                    description: '🌷Koffie House'
+                    description: '🌷Sophomore'
                 },
                 {
                     id:'pic3',
                     picture: './images/pic3.jpg',
                     done: false,
-                    description: '🌷Arrivals Cafe Gallery'
+                    description: '🌷Junior'
+                },
+                {
+                    id:'pic4',
+                    picture: './images/pic4.jpg',
+                    done: false,
+                    description: '🌷Senior'
+                },
+                {
+                    id:'pic5',
+                    picture: './images/pic5.jpg',
+                    done: false,
+                    description: '🌷Graduate'
                 },
             ],
             inputTask: '',
@@ -56,9 +68,6 @@ const app = {
         
     },
     computed: {
-        countimage() {
-            return this.tasks.length
-        },
         searchimage() {
             return this.tasks.filter((tasks) => {
                 return tasks.description.toLowerCase().includes(this.inputTask.toLowerCase());
