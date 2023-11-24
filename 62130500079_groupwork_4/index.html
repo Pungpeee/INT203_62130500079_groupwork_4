@@ -7,7 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Photo gallery</title>
+    <title>My university gallery</title>
+    <link rel="icon" type="image/png" href="pungpeeeLogo.png"/>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
@@ -23,10 +24,11 @@
         <div class="container w-full mt-3 flex justify-center" v-show="!cross">
 
             <div class="card w-full p-5 shadow-2xl">
+                
                 <div>
                     <h1 class="gallery text-xl font-semibold">˚꒰༘ * My university gallery˚◡̎💝</h1>
                 </div>
-
+            
                 <div class="searchbox mt-6">
                     <img src="./images/search.png" class="cursor-pointer " style="width:30px" @click="search" v-show="!searchbox">
                     <div v-show="searchbox" class="input mt-6 ">
@@ -48,9 +50,6 @@
 
                         <p class="flex items-center mr-1"> {{image.description}} </p>
                     </div>
-
-                    <img v-show="image.done" src="./images/heart.png" style="width:30px">
-
 
                 </div>
 

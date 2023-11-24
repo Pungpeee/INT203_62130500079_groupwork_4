@@ -1,19 +1,19 @@
 body {
-  background-color: #B5E3E3;
+  background-color: #FFDFF8;
   border-radius: 10px
 }
 
 .card {
-  width: 400px;
+  width: 1000px;
   border: none;
   border-radius: 10px;
   background-color: #fff
 }
 .image {
-  transition: 0.2s opacity;
+  transition: 0.5s opacity;
 }
 .image {
-  transition: transform .2s;
+  transition: transform .5s;
 }
 .zoom:hover {
   -ms-transform: scale(1.2);
